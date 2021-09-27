@@ -39,7 +39,7 @@ try:
 except KeyboardInterrupt:
   print('\nExiting')
 
-pwm1.stop()
-pwm2.stop()
-pwm3.stop()
+# pwm1.stop()
+# pwm2.stop()
+# pwm3.stop()
 GPIO.cleanup()
