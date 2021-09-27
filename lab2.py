@@ -9,9 +9,9 @@ GPIO.setup(13, GPIO.OUT)
 GPIO.setup(20, GPIO.IN)
 GPIO.setup(21, GPIO.IN)
 
-pwm1 = GPIO.PWM(26, 100)
-pwm2 = GPIO.PWM(19, 100)
-pwm3 = GPIO.PWM(13, 100)
+pwm1 = GPIO.PWM(26, 1)
+pwm2 = GPIO.PWM(19, 1)
+pwm3 = GPIO.PWM(13, 1)
 
 
 def blink2():
