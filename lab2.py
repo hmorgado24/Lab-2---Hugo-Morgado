@@ -5,13 +5,13 @@ GPIO.setmode(GPIO.BCM)
 
 GPIO.setup(26, GPIO.OUT)
 GPIO.setup(19, GPIO.OUT)
-# GPIO.setup(13, GPIO.OUT)
+GPIO.setup(13, GPIO.OUT)
 GPIO.setup(25, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-#GPIO.setup(21, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(21, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
-pwm1 = GPIO.PWM(26, 1)
-pwm2 = GPIO.PWM(19, 1)
-# pwm3 = GPIO.PWM(13, 1)
+pwm1 = GPIO.PWM(26, 100)
+pwm2 = GPIO.PWM(19, 100)
+# pwm3 = GPIO.PWM(13, 100)
 
 def blink2():
   pwm2.start(0)
