@@ -3,16 +3,16 @@ from time import sleep
 
 GPIO.setmode(GPIO.BCM)
 
-GPIO.setup(26, GPIO.OUT)
-GPIO.setup(19, GPIO.OUT)
-GPIO.setup(13, GPIO.OUT)
+# GPIO.setup(26, GPIO.OUT)
+# GPIO.setup(19, GPIO.OUT)
+# GPIO.setup(13, GPIO.OUT)
 GPIO.setup(20, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-GPIO.setup(21, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+#GPIO.setup(21, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 # pwm1 = GPIO.PWM(26, 1)
 # pwm2 = GPIO.PWM(19, 1)
 # pwm3 = GPIO.PWM(13, 1)
-
+#
 
 def blink2(pin):
   print("Rising edge detected on pin %d"% pin)
