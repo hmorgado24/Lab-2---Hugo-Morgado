@@ -10,6 +10,7 @@ try:
   pwm.start(0)
   while True:
     for dc in range(100, 0, -1):
+      pwm.ChangeDutyCycle(dc)
       sleep(10)
 except KeyboardInterrupt:
   print('\nExiting')
