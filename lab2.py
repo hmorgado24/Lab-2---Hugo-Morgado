@@ -6,7 +6,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(26, GPIO.OUT)
 # GPIO.setup(19, GPIO.OUT)
 # GPIO.setup(13, GPIO.OUT)
-GPIO.setup(20, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(25, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 #GPIO.setup(21, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 pwm1 = GPIO.PWM(26, 1)
@@ -23,7 +23,7 @@ def blink2(pin):
   #   pwm2.ChangeDutyCycle(dc)
   #   sleep(.01)
 
-GPIO.add_event_detect(20, GPIO.RISING, callback=blink2, bouncetime=200)
+GPIO.add_event_detect(25, GPIO.RISING, callback=blink2, bouncetime=200)
 
 try: 
   while True:
