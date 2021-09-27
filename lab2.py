@@ -15,14 +15,17 @@ pwm2 = GPIO.PWM(19, 100)
 
 def blink2():
   pwm2.start(0)
-  while True:
-    if GPIO.input(pwm1) == GPIO.HIGH:
-      for dc in range(100, 0, -1):
-        pwm2.ChangeDutyCycle(dc)
-        sleep(.01)
-      for dc in range(0, 100, 1):
-        pwm2.ChangeDutyCycle(dc)
-        sleep(.01)
+  try:
+    while True:
+      if GPIO.input(pwm1) == GPIO.HIGH:
+        for dc in range(100, 0, -1):
+          pwm2.ChangeDutyCycle(dc)
+          sleep(.01)
+        for dc in range(0, 100, 1):
+          pwm2.ChangeDutyCycle(dc)
+          sleep(.01)
+  except KeyboardInterrupt:
+    print('\nExiting')
   pwm2.stop()
 
 try:
