@@ -25,7 +25,7 @@ def blink2():
       sleep(.01)
 
 try:
-  GPIO.add_event_detect(20, GPIO.FALLING, callback=blink2(), bouncetime=100)
+  GPIO.add_event_detect(20, GPIO.FALLING, callback=blink2, bouncetime=100)
   pwm1.start(0)
   while True:
     for dc in range(100, 0, -1):
