@@ -25,8 +25,6 @@ def blink2():
         sleep(.01)
   pwm2.stop()
 
-GPIO.add_event_detect(25, GPIO.RISING, callback=blink2, bouncetime=200)
-
 try:
   pwm1.start(0)
   while True:
@@ -38,6 +36,8 @@ try:
       sleep(.01)
 except KeyboardInterrupt:
   print('\nExiting')
+
+GPIO.add_event_detect(25, GPIO.RISING, callback=blink2, bouncetime=200)
 
 pwm1.stop()
 # pwm3.stop()
