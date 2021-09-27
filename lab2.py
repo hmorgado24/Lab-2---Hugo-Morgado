@@ -4,7 +4,7 @@ from time import sleep
 GPIO.setmode(GPIO.BCM)
 
 GPIO.setup(26, GPIO.OUT)
-# GPIO.setup(19, GPIO.OUT)
+GPIO.setup(19, GPIO.OUT)
 # GPIO.setup(13, GPIO.OUT)
 GPIO.setup(25, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 #GPIO.setup(21, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
@@ -22,6 +22,7 @@ def blink2(pin):
     for dc in range(0, 100, 1):
       pwm2.ChangeDutyCycle(dc)
       sleep(.01)
+  pwm2.stop()
 
 GPIO.add_event_detect(25, GPIO.RISING, callback=blink2, bouncetime=200)
 
@@ -38,6 +39,5 @@ except KeyboardInterrupt:
   print('\nExiting')
 
 pwm1.stop()
-# pwm2.stop()
 # pwm3.stop()
 GPIO.cleanup()
