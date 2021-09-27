@@ -14,7 +14,7 @@ pwm1 = GPIO.PWM(26, 100)
 
 def blink():
   pwm2 = GPIO.PWM(19, 100)
-  pwm2.start(0)a
+  pwm2.start(0)
   try:
     while True:
       if GPIO.input(pwm2) == GPIO.HIGH:
