@@ -16,7 +16,7 @@ pwm3 = GPIO.PWM(13, 1)
 
 def blink2(pin):
   print("Rising edge detected on pin %d"% pin)
-  pwm2.start(0)
+  #pwm2.start(0)
   # for dc in range(100, 0, -1):
   #   pwm2.ChangeDutyCycle(dc)
   #   sleep(.01)
