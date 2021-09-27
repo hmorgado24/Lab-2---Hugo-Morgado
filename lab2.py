@@ -11,7 +11,7 @@ try:
   while True:
     for dc in range(100, 0, -1):
       pwm.ChangeDutyCycle(dc)
-      sleep(10)
+      sleep(1)
 except KeyboardInterrupt:
   print('\nExiting')
 
