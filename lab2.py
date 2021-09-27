@@ -13,7 +13,7 @@ pwm1 = GPIO.PWM(26, 1)
 pwm2 = GPIO.PWM(19, 1)
 # pwm3 = GPIO.PWM(13, 1)
 
-def blink2(pin):
+def blink2():
   pwm2.start(0)
   while True:
     if GPIO.input(pwm1) == GPIO.HIGH:
