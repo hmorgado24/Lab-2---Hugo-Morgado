@@ -9,7 +9,7 @@ pwm = GPIO.PWM(26, 1)
 try:
   pwm.start(0)
   while True:
-    for dc in range(100, 0, -1):
+    for dc in range(101):
       pwm.ChangeDutyCycle(dc)
       sleep(.01)
 except KeyboardInterrupt:
