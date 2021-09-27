@@ -14,7 +14,8 @@ pwm2 = GPIO.PWM(19, 1)
 pwm3 = GPIO.PWM(13, 1)
 
 
-def blink2():
+def blink2(pin):
+  print("Rising edge detected on pin %d" % pin)
   pwm2.start(0)
   while True:
     for dc in range(100, 0, -1):
@@ -25,7 +26,7 @@ def blink2():
       sleep(.01)
 
 try:
-  GPIO.add_event_detect(20, GPIO.FALLING, callback=blink2(), bouncetime=100)
+  GPIO.add_event_detect(20, GPIO.FALLING, callback=blink2, bouncetime=100)
   pwm1.start(0)
   while True:
     for dc in range(100, 0, -1):
