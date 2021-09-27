@@ -15,13 +15,14 @@ pwm2 = GPIO.PWM(19, 1)
 
 def blink2(pin):
   pwm2.start(0)
-  while True:
-    for dc in range(100, 0, -1):
-      pwm2.ChangeDutyCycle(dc)
-      sleep(.01)
-    for dc in range(0, 100, 1):
-      pwm2.ChangeDutyCycle(dc)
-      sleep(.01)
+  if GPIO.input(pwm1) == GPIO.HIGH:
+    while True:
+      for dc in range(100, 0, -1):
+        pwm2.ChangeDutyCycle(dc)
+        sleep(.01)
+      for dc in range(0, 100, 1):
+        pwm2.ChangeDutyCycle(dc)
+        sleep(.01)
   pwm2.stop()
 
 GPIO.add_event_detect(25, GPIO.RISING, callback=blink2, bouncetime=200)
