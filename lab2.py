@@ -24,11 +24,10 @@ def blink2(pin):
   #   pwm2.ChangeDutyCycle(dc)
   #   sleep(.01)
 
-try:
-  GPIO.add_event_detect(20, GPIO.RISING, callback=blink2, bouncetime=10)
-  
+try:  
   # pwm1.start(0)
-  # while True:
+  while True:
+    GPIO.add_event_detect(20, GPIO.RISING, callback=blink2, bouncetime=10)
   #   for dc in range(100, 0, -1):
   #     pwm1.ChangeDutyCycle(dc)
   #     sleep(.01)
