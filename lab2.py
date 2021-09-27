@@ -14,8 +14,7 @@ pwm2 = GPIO.PWM(19, 1)
 pwm3 = GPIO.PWM(13, 1)
 
 
-def blink2(pin):
-  print("Rising edge detected on pin %d" % pin)
+def blink2():
   pwm2.start(0)
   while True:
     for dc in range(100, 0, -1):
