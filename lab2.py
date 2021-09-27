@@ -12,7 +12,7 @@ try:
     for dc in range(100, 0, -1):
       pwm.ChangeDutyCycle(dc)
       sleep(.01)
-    for dc in range(100, 1):
+    for dc in range(0, 100, 1):
       pwm.ChangeDutyCycle(dc)
       sleep(.01)
 except KeyboardInterrupt:
