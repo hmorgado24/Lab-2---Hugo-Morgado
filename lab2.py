@@ -6,7 +6,7 @@ GPIO.setup(26, GPIO.OUT)
 pwm = GPIO.PWM(26, 1)
 try:
   pwm.start(50)
-  while true:
+  while True:
     pass
 except KeyboardInterrupt:
     print('\nExiting')
