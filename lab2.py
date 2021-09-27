@@ -17,7 +17,7 @@ def blink():
   pwm2.start(0)a
   try:
     while True:
-      if GPIO.input(pwm1) == GPIO.HIGH:
+      if GPIO.input(pwm2) == GPIO.HIGH:
         for dc in range(100, 0, -1):
           pwm2.ChangeDutyCycle(dc)
           sleep(.01)
