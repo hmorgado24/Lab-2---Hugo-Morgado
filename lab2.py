@@ -10,11 +10,11 @@ GPIO.setup(25, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(21, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 pwm1 = GPIO.PWM(26, 100)
-pwm2 = GPIO.PWM(19, 100)
 # pwm3 = GPIO.PWM(13, 100)
 
-def blink2():
-  pwm2.start(0)
+def blink():
+  pwm2 = GPIO.PWM(19, 100)
+  pwm2.start(0)a
   try:
     while True:
       if GPIO.input(pwm1) == GPIO.HIGH:
@@ -28,7 +28,7 @@ def blink2():
     print('\nExiting')
   pwm2.stop()
 
-GPIO.add_event_detect(25, GPIO.RISING, callback=blink2, bouncetime=200)
+GPIO.add_event_detect(25, GPIO.RISING, callback=blink, bouncetime=200)
 
 try:
   pwm1.start(0)
