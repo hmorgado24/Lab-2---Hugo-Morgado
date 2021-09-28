@@ -36,12 +36,9 @@ def blink():
   pwm3.stop()
   GPIO.cleanup()
 
-GPIO.add_event_detect(25, GPIO.RISING, callback=blink(), bouncetime=200)
-GPIO.add_event_detect(21, GPIO.RISING, callback=blink(), bouncetime=200)
-
 try:
   pwm1 = GPIO.PWM(26, 100)
-  pwm1.start(100)
+  pwm1.start(0)
   while True:
     for dc in range(100, 0, -1):
       pwm1.ChangeDutyCycle(dc)
@@ -51,6 +48,9 @@ try:
       sleep(.01)
 except KeyboardInterrupt:
   print('\nExiting')
-pwm1.stop()
 
+GPIO.add_event_detect(25, GPIO.RISING, callback=blink(), bouncetime=200)
+GPIO.add_event_detect(21, GPIO.RISING, callback=blink(), bouncetime=200)
+
+pwm1.stop()
 GPIO.cleanup()
