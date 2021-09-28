@@ -34,14 +34,16 @@ def blink(self):
           sleep(.01)
   except KeyboardInterrupt:
     print('\nExiting')
-  pwm2.stop()
-  pwm3.stop()
-  GPIO.cleanup()
+    pwm2.stop()
+    pwm3.stop()
+    GPIO.cleanup()
 
-GPIO.add_event_detect(25, GPIO.RISING, callback=blink, bouncetime=200)
-GPIO.add_event_detect(21, GPIO.RISING, callback=blink, bouncetime=200)
+# GPIO.add_event_detect(25, GPIO.RISING, callback=blink, bouncetime=200)
+# GPIO.add_event_detect(21, GPIO.RISING, callback=blink, bouncetime=200)
 
 try:
+  GPIO.add_event_detect(25, GPIO.RISING, callback=blink, bouncetime=200)
+  GPIO.add_event_detect(21, GPIO.RISING, callback=blink, bouncetime=200)
   while True:
     GPIO.output(26, 0)
     sleep(.5)
@@ -49,6 +51,5 @@ try:
     sleep(.5)
 except KeyboardInterrupt:
   print('\nExiting')
-
-pwm1.stop()
-GPIO.cleanup()
+  pwm1.stop()
+  GPIO.cleanup()
