@@ -43,9 +43,9 @@ GPIO.add_event_detect(21, GPIO.RISING, callback=blink, bouncetime=200)
 
 try:
   while True:
-    GPIO.OUTPUT(26, 0)
+    GPIO.output(26, 0)
     sleep(.5)
-    GPIO.OUTPUT(26, 1)
+    GPIO.output(26, 1)
     sleep(.5)
 except KeyboardInterrupt:
   print('\nExiting')
