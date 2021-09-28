@@ -11,13 +11,12 @@ GPIO.setup(21, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 pwm1 = GPIO.PWM(26, 100)
 
-def blink():
+def blink(self):
   pwm2 = GPIO.PWM(19, 100)
   pwm2.start(100)
   pwm3 = GPIO.PWM(13, 100)
   pwm3.start(100)
   try:
-    while True:
       if GPIO.input(25) == GPIO.HIGH:
         for dc in range(100, 0, -1):
           pwm2.ChangeDutyCycle(dc)
