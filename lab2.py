@@ -3,9 +3,9 @@ from time import sleep
 
 GPIO.setmode(GPIO.BCM)
 
-GPIO.setup(26, GPIO.OUT)
-GPIO.setup(19, GPIO.OUT)
-GPIO.setup(13, GPIO.OUT)
+# GPIO.setup(26, GPIO.OUT)
+# GPIO.setup(19, GPIO.OUT)
+# GPIO.setup(13, GPIO.OUT)
 GPIO.setup(25, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(21, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
