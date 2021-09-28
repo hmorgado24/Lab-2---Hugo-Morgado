@@ -17,20 +17,21 @@ def blink(self):
   pwm3 = GPIO.PWM(13, 100)
   pwm3.start(100)
   try:
-    if GPIO.input(25) == GPIO.HIGH:
-      for dc in range(100, 0, -1):
-        pwm2.ChangeDutyCycle(dc)
-        sleep(.01)
-      for dc in range(0, 100, 1):
-        pwm2.ChangeDutyCycle(dc)
-        sleep(.01)
-    if GPIO.input(21) == GPIO.HIGH:
-      for dc in range(100, 0, -1):
-        pwm3.ChangeDutyCycle(dc)
-        sleep(.01)
-      for dc in range(0, 100, 1):
-        pwm3.ChangeDutyCycle(dc)
-        sleep(.01)
+    while True:
+      if GPIO.input(25) == GPIO.HIGH:
+        for dc in range(100, 0, -1):
+          pwm2.ChangeDutyCycle(dc)
+          sleep(.01)
+        for dc in range(0, 100, 1):
+          pwm2.ChangeDutyCycle(dc)
+          sleep(.01)
+      if GPIO.input(21) == GPIO.HIGH:
+        for dc in range(100, 0, -1):
+          pwm3.ChangeDutyCycle(dc)
+          sleep(.01)
+        for dc in range(0, 100, 1):
+          pwm3.ChangeDutyCycle(dc)
+          sleep(.01)
   except KeyboardInterrupt:
     print('\nExiting')
   pwm2.stop()
