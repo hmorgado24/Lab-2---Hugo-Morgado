@@ -41,7 +41,7 @@ GPIO.add_event_detect(21, GPIO.RISING, callback=blink(), bouncetime=200)
 
 try:
   pwm1 = GPIO.PWM(26, 100)
-  pwm1.start(0)
+  pwm1.start(100)
   while True:
     for dc in range(100, 0, -1):
       pwm1.ChangeDutyCycle(dc)
