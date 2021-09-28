@@ -12,7 +12,6 @@ GPIO.setup(21, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 pwm1 = GPIO.PWM(26, 100)
 pwm2 = GPIO.PWM(19, 100)
 pwm3 = GPIO.PWM(13, 100)
-pwm1.start(100)
 pwm2.start(100)
 pwm3.start(100)
 
@@ -44,12 +43,10 @@ GPIO.add_event_detect(21, GPIO.RISING, callback=blink, bouncetime=200)
 
 try:
   while True:
-    for dc in range(100, 0, -1):
-      pwm1.ChangeDutyCycle(dc)
-      sleep(.01)
-    for dc in range(0, 100, 1):
-      pwm1.ChangeDutyCycle(dc)
-      sleep(.01)
+    GPIO.OUTPUT(26, 0)
+    sleep(.5)
+    GPIO.OUTPUT(26, 1)
+    sleep(.5)
 except KeyboardInterrupt:
   print('\nExiting')
 
