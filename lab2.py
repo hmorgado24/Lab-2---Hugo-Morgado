@@ -22,7 +22,7 @@ def blink():
         for dc in range(0, 100, 1):
           pwm2.ChangeDutyCycle(dc)
           sleep(.01)
-      if GPIO.input(20) == GPIO.HIGH:
+      if GPIO.input(21) == GPIO.HIGH:
         for dc in range(100, 0, -1):
           pwm3.ChangeDutyCycle(dc)
           sleep(.01)
