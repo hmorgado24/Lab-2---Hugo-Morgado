@@ -33,7 +33,7 @@ def blink():
   pwm2.stop()
   pwm3.stop()
 
-GPIO.add_event_detect(25, GPIO.RISING, callback=blink, bouncetime=200)
+GPIO.add_event_detect(25, GPIO.RISING, callback=blink(), bouncetime=200)
 GPIO.add_event_detect(21, GPIO.RISING, callback=blink(), bouncetime=200)
 
 try:
